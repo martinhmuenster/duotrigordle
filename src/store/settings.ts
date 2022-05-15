@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export type SettingsState = {
   colorBlindMode: boolean;
   showTimer: boolean;
+  speedrunMode: boolean;
   wideMode: boolean;
   hideCompletedBoards: boolean;
   animateHiding: boolean;
@@ -11,6 +12,7 @@ export type SettingsState = {
 const initialState: SettingsState = {
   colorBlindMode: false,
   showTimer: false,
+  speedrunMode: false,
   wideMode: false,
   hideCompletedBoards: false,
   animateHiding: true,

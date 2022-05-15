@@ -86,9 +86,12 @@ export function getTodaysId(): number {
 }
 
 // Given a duotrigordle id, return the corresponding 32 target wordles
-export function getTargetWords(id: number): string[] {
+export function getTargetWords(id: number, firstWord: string = ""): string[] {
   const targetWords: string[] = [];
   const rng = MersenneTwister(id);
+  if (firstWord != "") {
+    targetWords.push(firstWord);
+  }
   while (targetWords.length < NUM_BOARDS) {
     const idx = rng.u32() % WORDS_TARGET.length;
     const word = WORDS_TARGET[idx];
